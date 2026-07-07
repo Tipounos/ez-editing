@@ -1386,7 +1386,7 @@ footer * {
     border-radius: 999px;
     background: var(--accent);
     transform-origin: center top;
-    animation: burst .45s ease-out forwards;
+    animation: burst .4s ease-out forwards;
 }
 
 @keyframes burst {

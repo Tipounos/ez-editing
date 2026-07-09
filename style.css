@@ -242,9 +242,12 @@ h1 span {
     font-family: var(--font-title);
 }
 
+h2 {
+    margin: 6rem 0;
+}
+
 h2, h2 span {
     font-size: 1.8rem;
-    margin: 3rem 0;
     text-align: center;
     white-space: normal;
     font-family: var(--font-title);

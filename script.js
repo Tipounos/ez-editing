@@ -54,10 +54,8 @@ window.addEventListener("load", () => {
     });
 
         const carousel = document.getElementById("contenu-carousel");
-    console.log(carousel);
     
     document.querySelector(".contenu-left").addEventListener("click", () => {
-        console.log("left");
         
     carousel.scrollBy({
         left: -400,
@@ -66,7 +64,6 @@ window.addEventListener("load", () => {
     });
 
     document.querySelector(".contenu-right").addEventListener("click", () => {
-        console.log("right");
         
     carousel.scrollBy({
         left: 400,
@@ -227,19 +224,32 @@ window.addEventListener("load", () => {
     document.querySelectorAll(".open-popup").forEach(btn => {
         btn.addEventListener("click", (e) => {
             document.getElementById(btn.dataset.target).classList.add("on")
-            console.log("on");
             e.stopPropagation()
             
 
             document.addEventListener("click", () => {
                 document.querySelectorAll(".popup.on").forEach(popup => {
                     popup.classList.remove("on")
-                    console.log("off");
                     
                 })
             },{once: true} )            
         })
     })
+
+    // FAQ accordion
+
+    document.querySelectorAll(".faq-item").forEach(item => {
+
+        item.addEventListener("click", () => {
+            const alreadyOpen = item.classList.contains("open");
+
+            document.querySelectorAll(".faq-item.open").forEach(openItem => {
+                if (openItem !== item) openItem.classList.remove("open");
+            });
+
+            item.classList.toggle("open", !alreadyOpen);
+        });
+    });
 
 
 })
